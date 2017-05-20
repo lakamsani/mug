@@ -1,0 +1,6 @@
+{
+  "credentials": {
+    "MONGO_URL" : "mug.mongo.url",
+    "MONGO_PASS" : "mug.mongo.pass"
+  }
+}
