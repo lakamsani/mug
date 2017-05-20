@@ -1,0 +1,38 @@
+{
+    "PolicyVersion": {
+        "CreateDate": "2017-02-09T17:58:33Z", 
+        "VersionId": "v1", 
+        "Document": {
+            "Version": "2012-10-17", 
+            "Statement": [
+                {
+                    "Action": [
+                        "kms:Decrypt", 
+                        "kms:DescribeKey", 
+                        "kms:Encrypt", 
+                        "kms:GetKeyPolicy", 
+                        "kms:ListAliases", 
+                        "kms:ListGrants", 
+                        "kms:ListKeyPolicies", 
+                        "kms:ListKeys"
+                    ], 
+                    "Resource": [
+                        "arn:aws:kms:us-west-2:*:*"
+                    ], 
+                    "Effect": "Allow", 
+                    "Sid": "Stmt1486660782000"
+                }, 
+                {
+                    "Action": [
+                        "dynamodb:GetItem", 
+                        "dynamodb:Query", 
+                        "dynamodb:Scan"
+                    ], 
+                    "Resource": "arn:aws:dynamodb:us-west-2:*:table/credential-store", 
+                    "Effect": "Allow"
+                }
+            ]
+        }, 
+        "IsDefaultVersion": true
+    }
+}
