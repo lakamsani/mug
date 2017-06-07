@@ -15,17 +15,12 @@ const Event = require("./models/Event");
   // initialize CredStash with KMS secrets via AWS SDK
   await credController.initCreds()
 
-  // connect to mongo via mongooose
-  if (mongoose.connection.readyState === 0)
-    mongoose.connect(process.env.MONGO_URL, {
+  if (mongoose.connection.readyState === 0) {
+    await mongoose.connect(process.env.MONGO_URL, {
       server: {auto_reconnect: true, reconnectInterval: 1000, reconnectTries: Number.MAX_VALUE}
-    }, function (err) {
-      if (err) {
-        global.log.error("DB Connection failed due to " + JSON.stringify(err));
-        global.log.error("Exiting")
-        process.exit(1);
-      }
-    });
+    })
+  }
+
 
   mongoose.connection.once('open', function () {
     log.info("app.js: Mongo DB connection established via mongoose")
