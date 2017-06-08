@@ -1,5 +1,5 @@
 # mug
-Sample code and scripts MongoDB User Group (MUG) meeting at Netflix on June 7, 2017.
+Sample code and scripts MongoDB User Group (MUG) meeting at Netflix on June 7, 2017. Presentation is [here](http://bit.ly/2rX7eL0).
 
 ## requirements
 * [node.js](https://nodejs.org/en/) 7.8 or higher for async/await
